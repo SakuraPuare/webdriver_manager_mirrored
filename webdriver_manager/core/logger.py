@@ -23,9 +23,9 @@ def set_logger(logger):
     Returns None
     """
 
-    # Check if the logger is a valid logger
-    if not isinstance(logger, logging.Logger):
-        raise ValueError("The logger must be an instance of logging.Logger")
+    # # Check if the logger is a valid logger
+    # if not isinstance(logger, logging.Logger):
+    #     raise ValueError("The logger must be an instance of logging.Logger")
 
     # Bind the logger input to the global logger
     global __logger
