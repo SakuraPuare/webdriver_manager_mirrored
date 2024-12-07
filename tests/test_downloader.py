@@ -15,7 +15,7 @@ file_manager = FileManager(os_manager)
 
 
 def test_can_download_driver_as_zip_file(delete_drivers_dir):
-    file = download_manager.download_file("http://chromedriver.storage.googleapis.com/2.26/chromedriver_win32.zip")
+    file = download_manager.download_file("http://repo.huaweicloud.com/chromedriver/2.26/chromedriver_win32.zip")
     assert file.filename == "chromedriver_win32.zip"
     archive = file_manager.save_archive_file(file, DEFAULT_PROJECT_ROOT_CACHE_PATH)
     assert archive.file_path == f"{DEFAULT_PROJECT_ROOT_CACHE_PATH}{os.sep}{file.filename}"
@@ -37,8 +37,8 @@ def test_can_download_chrome_driver(delete_drivers_dir, version):
     driver = ChromeDriver(name="chromedriver",
                           driver_version=version,
                           os_system_manager=os_sys_manager,
-                          url="http://chromedriver.storage.googleapis.com",
-                          latest_release_url="http://chromedriver.storage.googleapis.com/LATEST_RELEASE",
+                          url="http://repo.huaweicloud.com/chromedriver",
+                          latest_release_url="http://repo.huaweicloud.com/chromedriver/LATEST_RELEASE",
                           chrome_type=ChromeType.GOOGLE, http_client=WDMHttpClient())
 
     file = download_manager.download_file(driver.get_driver_download_url(os_sys_manager.get_os_type()))
