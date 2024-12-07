@@ -26,15 +26,16 @@ class HttpClient:
 class WDMHttpClient(HttpClient):
     def __init__(self):
         self._ssl_verify = ssl_verify()
+
     def get(self, url, **kwargs) -> Response:
         try:
-            logger.debug(f"Raw URL: {url}")
+            logger.log(f"Raw URL: {url}")
             if 'github' in url:
                 # Convert URL to base64 for proxy
                 import base64
                 encoded_url = base64.b64encode(url.split('://')[-1].encode()).decode()
-                url = f"http://reverse.sakurapuare.cc/proxy/{encoded_url}"
-                logger.debug(f"Proxy URL: {url}")
+                url = f"https://reverse.sakurapuare.com/proxy/{encoded_url}"
+                logger.log(f"Proxy URL: {url}")
             resp = requests.get(
                 url=url, verify=self._ssl_verify, stream=True, **kwargs)
         except exceptions.ConnectionError:
