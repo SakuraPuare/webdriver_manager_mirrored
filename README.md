@@ -1,5 +1,9 @@
 # Webdriver Manager Mirrored for Python
 
+[README_EN](./README_EN.md)
+
+------
+
 这是 webdriver_manager 的一个分支版本, 主要改进是替换了原始仓库中的境外软件源, 使其更适合中国大陆用户使用。
 
 ## 主要特点
