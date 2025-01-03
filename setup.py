@@ -17,17 +17,17 @@ with open("README.md", encoding="utf-8") as readme_file:
     readme = readme_file.read()
 
 setuptools.setup(
-    name='webdriver_manager',
+    name='webdriver_manager_mirrored',
     python_requires=">=3.7",
     long_description=readme,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(include=['webdriver_manager*']),
     include_package_data=True,
-    version='4.0.2',
+    version='4.0.2-dev',
     description='Library provides the way to automatically manage drivers for different browsers',
-    author='Sergey Pirogov',
-    author_email='automationremarks@gmail.com',
-    url='https://github.com/SergeyPirogov/webdriver_manager',
+    author='SakuraPuare',
+    author_email='sakurapuare@sakurapuare.com',
+    url='https://github.com/SakuraPuare/webdriver_manager_mirrored',
     keywords=['testing', 'selenium', 'driver', 'test automation'],
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
